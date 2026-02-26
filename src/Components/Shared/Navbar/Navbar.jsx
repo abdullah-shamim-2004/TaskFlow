@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Logo from "../Logo/Logo";
 import LoginBtn from "../../Button/LoginBtn/LoginBtn";
+import { NavLink } from "react-router";
 
 const Navbar = () => {
   const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
@@ -18,6 +19,9 @@ const Navbar = () => {
       </li>
       <li>
         <a>About Us</a>
+      </li>
+      <li>
+        <NavLink to="/dashboard">Dashboard</NavLink>
       </li>
     </>
   );
