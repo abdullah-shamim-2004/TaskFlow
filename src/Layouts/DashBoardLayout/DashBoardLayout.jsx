@@ -4,6 +4,9 @@ import { IoMdSettings } from "react-icons/io";
 import { MdAnalytics, MdDashboard, MdLogout } from "react-icons/md";
 import { NavLink, Outlet } from "react-router";
 import Logo from "../../Components/Shared/Logo/Logo";
+import { CiMail } from "react-icons/ci";
+import { IoNotificationsOutline } from "react-icons/io5";
+import DashNav from "../../Components/DashNav/DashNav";
 
 const DashBoardLayout = () => {
   const DashBoardLink = [
@@ -13,12 +16,13 @@ const DashBoardLayout = () => {
       //   badge: "DashBoard",
       tip: "Over-view",
       link: "/dashboard",
+      end: "end",
     },
     {
       icon: <MdAnalytics size={18} />,
       label: "Analytics",
       tip: "Analytics",
-      link: "/analytics",
+      link: "/dashboard/analytics",
     },
   ];
   return (
@@ -29,7 +33,7 @@ const DashBoardLayout = () => {
         {/*  Drawer Content*/}
         <div className="drawer-content">
           {/* Navbar */}
-          <nav className="navbar w-full bg-base-300 flex justify-center items-center sticky top-0 z-30 shadow-sm border-b border-base-300">
+          <nav className="navbar border-base-300 w-full bg-base-300 flex justify-between items-center sticky top-0 z-30 shadow-sm border-b ">
             <label
               htmlFor="my-drawer-4"
               aria-label="open sidebar"
@@ -45,6 +49,8 @@ const DashBoardLayout = () => {
               </div>
               <Logo />
             </div>
+            {/* Search Button + Mail + Notification + User info */}
+            <DashNav />
           </nav>
 
           {/* Page Content */}
@@ -77,6 +83,7 @@ const DashBoardLayout = () => {
               {DashBoardLink.map((item, i) => (
                 <li key={i} className="relative list-none">
                   <NavLink
+                    end={item.end}
                     to={item.link || "/"}
                     className={({ isActive }) =>
                       `flex items-center gap-4 py-3 px-4 transition-all duration-200 group ${
@@ -116,39 +123,23 @@ const DashBoardLayout = () => {
               ))}
             </ul>
 
-            {/* Bottom: Settings + Logout + User */}
+            {/* Bottom: Settings + Logout */}
             <div className="border-t border-base-300 px-2 pt-2 pb-3 space-y-0.5">
+              {/* Setting */}
               <button className="flex items-center gap-3 px-3 py-2 rounded-lg w-full text-left hover:bg-base-300 transition-colors text-sm">
                 <IoMdSettings size={18} />
                 <span>Settings</span>
               </button>
+              {/* Help */}
+              <button className="flex items-center gap-3 px-3 py-2 rounded-lg w-full text-left hover:bg-base-300 transition-colors text-sm">
+                <IoMdSettings size={18} />
+                <span>Help</span>
+              </button>
+              {/* Log out */}
               <button className="flex items-center gap-3 px-3 py-2 rounded-lg w-full text-left hover:bg-base-300 transition-colors text-sm text-error">
                 <MdLogout size={18} />
                 <span>Logout</span>
               </button>
-
-              {/* User Card */}
-              <div className="flex items-center gap-3 px-3 py-3 mt-1 rounded-xl bg-base-300">
-                <div className="avatar">
-                  <div className="w-8 rounded-full ring ring-primary ring-offset-base-200 ring-offset-1">
-                    <img
-                      src="https://i.ibb.co.com/rfsbtFGg/IMG-20220810-162239-857.jpg"
-                      alt="user"
-                    />
-                  </div>
-                </div>
-                <div className="flex-1 min-w-0">
-                  <p className="text-sm font-semibold truncate leading-none">
-                    Abdullah Shamim
-                  </p>
-                  <p className="text-xs text-base-content/40 truncate mt-0.5">
-                    abdullahshamim884@gmail.com
-                  </p>
-                </div>
-                <span className="badge badge-xs badge-success shrink-0">
-                  Pro
-                </span>
-              </div>
             </div>
           </div>
         </div>
