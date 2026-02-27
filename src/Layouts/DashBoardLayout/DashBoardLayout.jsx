@@ -7,6 +7,7 @@ import Logo from "../../Components/Shared/Logo/Logo";
 import { CiMail } from "react-icons/ci";
 import { IoNotificationsOutline } from "react-icons/io5";
 import DashNav from "../../Components/DashNav/DashNav";
+import { FaUser } from "react-icons/fa";
 
 const DashBoardLayout = () => {
   const DashBoardLink = [
@@ -17,6 +18,12 @@ const DashBoardLayout = () => {
       tip: "Over-view",
       link: "/dashboard",
       end: "end",
+    },
+    {
+      icon: <FaUser size={18} />,
+      label: "Users",
+      tip: "Users",
+      link: "/dashboard/users",
     },
     {
       icon: <MdAnalytics size={18} />,

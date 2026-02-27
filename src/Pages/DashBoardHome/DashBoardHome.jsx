@@ -5,11 +5,13 @@ import { FaDownload } from "react-icons/fa";
 import NormalBtn from "../../Components/Button/NormalBtn/NormalBtn";
 import StatCard from "../../Components/Card/StatCard/StatCard";
 import useOverview from "../../Hooks/useOverview/useOverview";
+// import useUsers from "../../Hooks/useUsers/useUsers";
 
 const DashBoardHome = () => {
   // Get the overview from useOverview hook
   const overviews = useOverview();
-  //   console.log(overviews);
+  //   const users = useUsers();
+  //   console.log(users);
 
   const state = [
     {

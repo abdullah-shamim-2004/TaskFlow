@@ -4,6 +4,7 @@ import Home from "../../Pages/Home/Home";
 import DashBoardLayout from "../../Layouts/DashBoardLayout/DashBoardLayout";
 import DashBoardHome from "../../Pages/DashBoardHome/DashBoardHome";
 import Analytics from "../../Pages/Analytics/Analytics";
+import Users from "../../Pages/Users/Users";
 
 const router = createBrowserRouter([
   {
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
       {
         path: "/dashboard",
         element: <DashBoardHome />,
+      },
+      {
+        path: "/dashboard/users",
+        element: <Users />,
       },
       {
         path: "/dashboard/analytics",
