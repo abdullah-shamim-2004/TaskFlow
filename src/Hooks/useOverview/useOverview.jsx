@@ -10,7 +10,7 @@ const useOverview = () => {
       setOverviews(res.data);
     };
     fetchOverview();
-  }, []);
+  }, [Api]);
   return overviews;
 };
 

@@ -5,9 +5,10 @@ import { MdAnalytics, MdDashboard, MdLogout } from "react-icons/md";
 import { NavLink, Outlet } from "react-router";
 import Logo from "../../Components/Shared/Logo/Logo";
 import { CiMail } from "react-icons/ci";
-import { IoNotificationsOutline } from "react-icons/io5";
+import { IoBagHandleSharp, IoNotificationsOutline } from "react-icons/io5";
 import DashNav from "../../Components/DashNav/DashNav";
 import { FaUser } from "react-icons/fa";
+import { FiHelpCircle } from "react-icons/fi";
 
 const DashBoardLayout = () => {
   const DashBoardLink = [
@@ -24,6 +25,12 @@ const DashBoardLayout = () => {
       label: "Users",
       tip: "Users",
       link: "/dashboard/users",
+    },
+    {
+      icon: <IoBagHandleSharp size={18} />,
+      label: "Products",
+      tip: "Products",
+      link: "/dashboard/products",
     },
     {
       icon: <MdAnalytics size={18} />,
@@ -139,7 +146,7 @@ const DashBoardLayout = () => {
               </button>
               {/* Help */}
               <button className="flex items-center gap-3 px-3 py-2 rounded-lg w-full text-left hover:bg-base-300 transition-colors text-sm">
-                <IoMdSettings size={18} />
+                <FiHelpCircle size={18} />
                 <span>Help</span>
               </button>
               {/* Log out */}

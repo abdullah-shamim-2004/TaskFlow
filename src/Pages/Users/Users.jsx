@@ -4,9 +4,10 @@ import { FaUser } from "react-icons/fa";
 import { BsArrowsFullscreen } from "react-icons/bs";
 import { MdDeleteForever } from "react-icons/md";
 import Swal from "sweetalert2";
+import Loader from "../../Components/Loader/Loader";
 
 const Users = () => {
-  const users = useUsers();
+  const { users, isLoading } = useUsers();
   const [currentUser, setCurrentUser] = useState(null);
   const [showModal, setShowModal] = useState(false);
   //   console.log(users);
@@ -29,7 +30,9 @@ const Users = () => {
       }
     });
   };
-
+  if (isLoading) {
+    return <Loader />;
+  }
   return (
     <div>
       <h2 className="text-2xl mb-2.5 p-2.5">Total User {users?.length}</h2>
