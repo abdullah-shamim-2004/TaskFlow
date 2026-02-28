@@ -84,7 +84,7 @@ const Analytics = () => {
 
         {/* Date Range Badge */}
         <div className="flex items-center gap-2 bg-base-300 border border-base-200 px-4 py-2 rounded-xl text-sm font-semibold text-base-content shadow-sm">
-          📅 Jan 1 – Jan 5, 2024
+          Jan 1 – Jan 5, 2024
         </div>
       </div>
       <div className="grid bg-base-100 grid-cols-2 gap-3">
@@ -92,7 +92,7 @@ const Analytics = () => {
           <AnalyticsCard data={data} key={data.id} />
         ))}
       </div>
-      
+
       {/* Line chart */}
       <div className="bg-white dark:bg-slate-800 rounded-2xl p-5 border border-slate-100 dark:border-slate-700/60 shadow-sm mb-4">
         <div className="flex flex-wrap items-center justify-between gap-3 mb-5">

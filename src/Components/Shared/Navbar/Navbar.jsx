@@ -5,23 +5,33 @@ import { NavLink } from "react-router";
 
 const Navbar = () => {
   const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
-  // Nav Links
+  // Active Link class
+  const linkClass = ({ isActive }) =>
+    isActive
+      ? "text-primary font-semibold border-b-2 border-primary"
+      : "text-base-content hover:text-primary transition-colors";
+  // all nav links
   const NavItems = (
     <>
       <li>
-        <a>Home</a>
+        <NavLink to="/" className={linkClass}>
+          Home
+        </NavLink>
       </li>
       <li>
-        <a>Products</a>
+        <NavLink to="/products" className={linkClass}>
+          Products
+        </NavLink>
       </li>
       <li>
-        <a>Blogs</a>
+        <NavLink to="/blogs" className={linkClass}>
+          Blogs
+        </NavLink>
       </li>
       <li>
-        <a>About Us</a>
-      </li>
-      <li>
-        <NavLink to="/dashboard">Dashboard</NavLink>
+        <NavLink to="/dashboard" className={linkClass}>
+          Dashboard
+        </NavLink>
       </li>
     </>
   );
@@ -66,7 +76,7 @@ const Navbar = () => {
         <Logo />
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1">{NavItems}</ul>
+        <ul className={`menu menu-horizontal px-1 text-primary`}>{NavItems}</ul>
       </div>
       <div className="navbar-end">
         {/* Theme Controller */}

@@ -1,8 +1,11 @@
 import React from "react";
+import useAPI from "../../Hooks/useAPI/useAPI";
+import Swal from "sweetalert2";
 
 const AddProducts = () => {
-    // add handle submit funtion
-  const handleSubmit = (e) => {
+  const Api = useAPI();
+  // add handle submit funtion
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const form = e.target;
     const newProduct = {
@@ -12,7 +15,13 @@ const AddProducts = () => {
       sales: Number(form.sales.value),
     };
     console.log("New Product:", newProduct);
-    // TODO: send to API or update state
+    Swal.fire({
+      position: "top-end",
+      icon: "success",
+      title: "Your work has been saved",
+      showConfirmButton: false,
+      timer: 1500,
+    });
     form.reset();
   };
 

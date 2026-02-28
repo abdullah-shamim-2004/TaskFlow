@@ -71,7 +71,7 @@ const DashBoardHome = () => {
         {/* Right side */}
         <div className="flex gap-3 ">
           <NormalBtn
-            to="/"
+            to="/dashboard/add-product"
             name="Add Product"
             className="bg-primary "
             icon={<IoMdAdd size={20} />}
@@ -86,7 +86,7 @@ const DashBoardHome = () => {
         </div>
       </div>
       {/* Overview Grid */}
-      <div className="grid grid-cols-2 gap-2.5 mt-2.5">
+      <div className="grid grid-cols-1 md:grid-cols-2  gap-2.5 mt-2.5">
         {state.map((item, i) => (
           <StatCard item={item} key={i} />
         ))}
