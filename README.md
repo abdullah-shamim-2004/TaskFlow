@@ -2,7 +2,7 @@
 
 > **Plan, prioritize, and accomplish your tasks with ease.** TaskFlow is a full-stack dashboard application that helps teams manage users, products, and analytics — all in one clean, modern interface.
 
-![TaskFlow Banner](https://placehold.co/1200x400/6366f1/ffffff?text=TaskFlow+Dashboard)
+![TaskFlow Banner](/public/dash-products.png)
 
 ---
 
