@@ -7,6 +7,9 @@ import Analytics from "../../Pages/Analytics/Analytics";
 import Users from "../../Pages/Users/Users";
 import Products from "../../Pages/Products/Products";
 import AddProducts from "../../Pages/AddProducts/AddProducts";
+import AuthLayout from "../../Layouts/AuthLayout/AuthLayout";
+import Login from "../../Auth/Login/Login";
+import Register from "../../Auth/Register/Register";
 
 const router = createBrowserRouter([
   {
@@ -16,6 +19,20 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <Home />,
+      },
+    ],
+  },
+  {
+    path: "/auth",
+    Component: AuthLayout,
+    children: [
+      {
+        path: "/auth/login",
+        Component: Login,
+      },
+      {
+        path: "/auth/register",
+        Component: Register,
       },
     ],
   },
