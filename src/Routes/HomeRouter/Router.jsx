@@ -11,6 +11,7 @@ import AuthLayout from "../../Layouts/AuthLayout/AuthLayout";
 import Login from "../../Auth/Login/Login";
 import Register from "../../Auth/Register/Register";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
+import AllProducts from "../../Pages/AllProducts/AllProducts";
 
 const router = createBrowserRouter([
   {
@@ -20,6 +21,10 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <Home />,
+      },
+      {
+        path: "/all-products",
+        element: <AllProducts />,
       },
     ],
   },
