@@ -20,7 +20,7 @@ const slides = [
     subtitle: "Limited Offer",
     offer: "30%",
     description: "Grab the hottest deals before they are gone.",
-    image: "https://images.unsplash.com/photo-1580910051074-3eb694886505",
+    image: "https://i.ibb.co.com/Xx5SN5SF/High-end-wireless-headphones-p.jpg",
   },
   {
     id: 3,
@@ -28,7 +28,7 @@ const slides = [
     subtitle: "Latest Collection",
     offer: "25%",
     description: "Discover the newest tech products today.",
-    image: "https://images.unsplash.com/photo-1603899124000-8c6c38f7e6d4",
+    image: "https://i.ibb.co.com/3yqdFKHG/High-end-smart-watch-product-s.jpg",
   },
 ];
 
@@ -85,13 +85,13 @@ const Banner = () => {
 
               {/* Right Image */}
               <div className="relative flex justify-center lg:justify-end">
-                <div className="absolute -top-10 -right-10 w-72 h-72 bg-primary rounded-full blur-xl opacity-30 animate-pulse" />
+                <div className="absolute -top-10 -right-10 w-72 h-72 bg-primary rounded-full  blur-xl opacity-30 animate-pulse" />
 
                 <div className="relative w-full max-w-md aspect-square overflow-hidden rounded-[30%_70%_70%_30%/_30%_30%_70%_70%] border-8 border-white shadow-2xl">
                   <img
                     src={slide.image}
                     alt="Product"
-                    className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
+                    className="w-full h-full object-cover "
                   />
                 </div>
 

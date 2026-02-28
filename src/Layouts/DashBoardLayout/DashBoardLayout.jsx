@@ -9,8 +9,21 @@ import { IoBagHandleSharp, IoNotificationsOutline } from "react-icons/io5";
 import DashNav from "../../Components/DashNav/DashNav";
 import { FaUser } from "react-icons/fa";
 import { FiHelpCircle } from "react-icons/fi";
+import useAuth from "../../Hooks/useAuth/useAuth";
+import { toast, ToastContainer } from "react-toastify";
 
 const DashBoardLayout = () => {
+  //user sign out
+  const { UserSignOut } = useAuth();
+  const handleSignOut = () => {
+    UserSignOut()
+      .then(() => {
+        toast.success("You signed out successfully!");
+      })
+      .catch((error) => {
+        toast.error(error.message);
+      });
+  };
   const DashBoardLink = [
     {
       icon: <MdDashboard size={18} />,
@@ -47,6 +60,7 @@ const DashBoardLayout = () => {
   ];
   return (
     <div className="max-w-screen-2xl w-full mx-auto">
+      <ToastContainer />
       <div className="drawer lg:drawer-open">
         <input id="my-drawer-4" type="checkbox" className="drawer-toggle" />
 
@@ -156,7 +170,10 @@ const DashBoardLayout = () => {
                 <span>Help</span>
               </button>
               {/* Log out */}
-              <button className="flex items-center gap-3 px-3 py-2 rounded-lg w-full text-left hover:bg-base-300 transition-colors text-sm text-error">
+              <button
+                onClick={handleSignOut}
+                className="flex items-center gap-3 px-3 py-2 rounded-lg w-full text-left hover:bg-base-300 transition-colors text-sm text-error"
+              >
                 <MdLogout size={18} />
                 <span>Logout</span>
               </button>

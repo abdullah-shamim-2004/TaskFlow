@@ -12,6 +12,7 @@ import Login from "../../Auth/Login/Login";
 import Register from "../../Auth/Register/Register";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import AllProducts from "../../Pages/AllProducts/AllProducts";
+import Blog from "../../Pages/Blog/Blog";
 
 const router = createBrowserRouter([
   {
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
       {
         path: "/all-products",
         element: <AllProducts />,
+      },
+      {
+        path: "/blog",
+        element: <Blog />,
       },
     ],
   },

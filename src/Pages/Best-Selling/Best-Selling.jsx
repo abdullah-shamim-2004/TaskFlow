@@ -6,15 +6,15 @@ export default function BestSelling() {
     toast("Successfully Add to Cart");
   };
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="py-20 my-5 bg-base-100">
       <ToastContainer></ToastContainer>
       <div className="max-w-7xl mx-auto px-6">
         {/* Section Header */}
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+          <h2 className="text-3xl md:text-4xl font-bold text-base-content">
             Best Selling Products
           </h2>
-          <p className="text-gray-600 mt-3">
+          <p className="text-base-content mt-3">
             Discover the most loved and trending products from ProductaX
           </p>
         </div>
@@ -24,7 +24,7 @@ export default function BestSelling() {
           {bestSellingProducts.map((product) => (
             <div
               key={product.id}
-              className="bg-white rounded-2xl shadow hover:shadow-lg transition overflow-hidden flex flex-col h-full"
+              className="bg-base-200 rounded-2xl shadow hover:shadow-lg transition overflow-hidden flex flex-col h-full"
             >
               {/* 1. Added 'flex flex-col h-full' to the parent card */}
 

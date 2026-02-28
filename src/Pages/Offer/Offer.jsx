@@ -2,20 +2,20 @@ import { offers } from "../../../public/offers";
 
 export default function OffersSection() {
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-base-100">
       <div className="max-w-7xl mx-auto px-6">
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-12">
           <div>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+            <h2 className="text-3xl md:text-4xl font-bold text-base-content">
               Hot Deals & Special Offers
             </h2>
-            <p className="text-gray-600 mt-3">
+            <p className="text-base-content mt-3">
               Don’t miss out on limited-time deals on your favorite products
             </p>
           </div>
 
-          <button className="mt-6 md:mt-0 border border-black px-6 py-2 rounded-xl hover:bg-black hover:text-white transition">
+          <button className="mt-6 md:mt-0 border border-base-200 px-6 py-2 rounded-xl hover:bg-base-200 hover:text-base-content transition">
             View All Deals
           </button>
         </div>
