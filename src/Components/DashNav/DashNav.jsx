@@ -4,31 +4,7 @@ import { IoNotificationsOutline } from "react-icons/io5";
 
 const DashNav = () => {
   return (
-    <div className="flex w-full justify-between items-center gap-2">
-      {/* Search btn */}
-      <div>
-        <label className="input">
-          <svg
-            className="h-[1em] opacity-50"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-          >
-            <g
-              strokeLinejoin="round"
-              strokeLinecap="round"
-              strokeWidth="2.5"
-              fill="none"
-              stroke="currentColor"
-            >
-              <circle cx="11" cy="11" r="8"></circle>
-              <path d="m21 21-4.3-4.3"></path>
-            </g>
-          </svg>
-          <input type="search" className="grow" placeholder="Search" />
-          <kbd className="kbd kbd-sm">⌘</kbd>
-          <kbd className="kbd kbd-sm">K</kbd>
-        </label>
-      </div>
+    <div className="flex w-full justify-end items-center gap-2">
       {/* Mail + Notification + User */}
       <div className="flex justify-around items-center gap-2">
         {/* Mail  */}
@@ -40,7 +16,7 @@ const DashNav = () => {
           <IoNotificationsOutline size={20} />
         </div>
         {/* User info */}
-        <div className="hidden md:block lg:block">
+        <div className="">
           {/* User Card */}
           <div className="flex cursor-pointer items-center gap-2 py-3 rounded-xl bg-base-300">
             <div className="avatar">
@@ -51,7 +27,7 @@ const DashNav = () => {
                 />
               </div>
             </div>
-            <div className="flex-1 min-w-0">
+            <div className="flex-1 hidden md:block lg:block min-w-0">
               <p className="text-sm font-semibold truncate leading-none">
                 Abdullah Shamim
               </p>

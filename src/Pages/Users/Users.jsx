@@ -5,6 +5,7 @@ import { BsArrowsFullscreen } from "react-icons/bs";
 import { MdDeleteForever } from "react-icons/md";
 import Swal from "sweetalert2";
 import Loader from "../../Components/Loader/Loader";
+import { BiSearch } from "react-icons/bi";
 
 const Users = () => {
   const { users, isLoading } = useUsers();
@@ -35,7 +36,23 @@ const Users = () => {
   }
   return (
     <div>
-      <h2 className="text-2xl mb-2.5 p-2.5">Total User {users?.length}</h2>
+      {/* <h2 className="text-2xl mb-2.5 p-2.5">Total User {users?.length}</h2> */}
+      {/* Search */}
+      <div className="flex flex-wrap items-center justify-between gap-3 px-5 py-4 border-b ">
+        <div className="relative">
+          <span className="absolute left-3 top-1/2 -translate-y-1/2 text-sm">
+            <BiSearch />
+          </span>
+          <input
+            type="text"
+            placeholder="Search User..."
+            className="pl-8 pr-4 py-2 text-sm rounded-xl border  w-56 transition"
+          />
+        </div>
+        <span className="text-xs text-base-content font-medium">
+          {users.length} of {users.length} users
+        </span>
+      </div>
       <div className="overflow-x-auto">
         <table className="table">
           {/* head */}
