@@ -1,16 +1,17 @@
 import React, { useEffect, useState } from "react";
-import useAPI from "../useAPI/useAPI";
+// import useAPI from "../useAPI/useAPI";
+import useSecure from "../useSecure/useSecure";
 
 const useOverview = () => {
   const [overviews, setOverviews] = useState();
-  const Api = useAPI();
+  const api = useSecure();
   useEffect(() => {
     const fetchOverview = async () => {
-      const res = await Api.get("/api/overview");
+      const res = await api.get("/api/overview");
       setOverviews(res.data);
     };
     fetchOverview();
-  }, [Api]);
+  }, [api]);
   return overviews;
 };
 

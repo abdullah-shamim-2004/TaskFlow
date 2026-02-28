@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from "react";
-import useAPI from "../useAPI/useAPI";
+import useSecure from "../useSecure/useSecure";
+// import useAPI from "../useAPI/useAPI";
 
 const useProducts = () => {
-  const Api = useAPI();
+  const api = useSecure();
   const [products, setProducts] = useState();
   const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const res = await Api.get("/api/products");
+        const res = await api.get("/api/products");
         setProducts(res.data);
       } catch (error) {
         console.log(error);
@@ -17,7 +18,7 @@ const useProducts = () => {
       }
     };
     fetchProducts();
-  }, [Api]);
+  }, [api]);
   return { products, isLoading };
 };
 

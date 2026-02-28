@@ -67,7 +67,7 @@ const Analytics = () => {
       color: "bg-base-200",
     },
   ];
-  console.log(totalViews, totalClicks, totalConversations, conversationRate);
+  // console.log(totalViews, totalClicks, totalConversations, conversationRate);
 
   return (
     <div className="p-6 md:p-8">
@@ -88,8 +88,8 @@ const Analytics = () => {
         </div>
       </div>
       <div className="grid bg-base-100 grid-cols-2 gap-3">
-        {analyticsStats.map((data) => (
-          <AnalyticsCard data={data} key={data.id} />
+        {analyticsStats.map((data, index) => (
+          <AnalyticsCard key={index} data={data} />
         ))}
       </div>
 
@@ -110,8 +110,8 @@ const Analytics = () => {
               { color: "#6366f1", label: "Views" },
               { color: "#06b6d4", label: "Clicks" },
               { color: "#10b981", label: "Conversions" },
-            ].map((l) => (
-              <div key={l.label} className="flex items-center gap-1.5">
+            ].map((l, index) => (
+              <div key={index} className="flex items-center gap-1.5">
                 <div
                   className="w-3 h-0.5 rounded-full"
                   style={{ background: l.color }}

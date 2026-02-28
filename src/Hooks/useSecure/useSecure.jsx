@@ -1,22 +1,27 @@
 import axios from "axios";
-import React, { useEffect } from "react";
+import { useEffect } from "react";
+
 import { useNavigate } from "react-router";
 import useAuth from "../useAuth/useAuth";
 
-const axiosSecure = axios.create({
+//axios instance.
+export const api = axios.create({
   baseURL: "https://task-api-eight-flax.vercel.app",
   // baseURL: "http://localhost:3000/",
-  headers: { "Content-Type": "application/json" },
+  headers: {
+    "Content-Type": "application/json",
+  },
 });
 
 const useSecure = () => {
   const { user, UserSignOut } = useAuth();
   const token = user?.accessToken;
   const navigate = useNavigate();
+  //   console.log(token);
 
+  // request interceptor
   useEffect(() => {
-    // Request Interceptor
-    const requestInterceptor = axiosSecure.interceptors.request.use(
+    const requestInterceptor = api.interceptors.request.use(
       (config) => {
         if (token) {
           config.headers.Authorization = `Bearer ${token}`;
@@ -25,9 +30,8 @@ const useSecure = () => {
       },
       (error) => Promise.reject(error),
     );
-
     // Response Interceptor
-    const resInterceptor = axiosSecure.interceptors.response.use(
+    const resInterceptor = api.interceptors.response.use(
       (response) => response,
       async (error) => {
         const statusCode = error.response?.status;
@@ -41,14 +45,13 @@ const useSecure = () => {
       },
     );
 
-    // Cleanup
     return () => {
-      axiosSecure.interceptors.request.eject(requestInterceptor);
-      axiosSecure.interceptors.response.eject(resInterceptor);
+      api.interceptors.request.eject(requestInterceptor);
+      api.interceptors.response.eject(resInterceptor);
     };
   }, [token, UserSignOut, navigate]);
 
-  return axiosSecure;
+  return api;
 };
 
 export default useSecure;
