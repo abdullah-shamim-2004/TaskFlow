@@ -1,6 +1,6 @@
 import React from "react";
 import { BsLayoutSidebarInset } from "react-icons/bs";
-import { IoMdSettings } from "react-icons/io";
+import { IoMdAddCircle, IoMdSettings } from "react-icons/io";
 import { MdAnalytics, MdDashboard, MdLogout } from "react-icons/md";
 import { NavLink, Outlet } from "react-router";
 import Logo from "../../Components/Shared/Logo/Logo";
@@ -31,6 +31,12 @@ const DashBoardLayout = () => {
       label: "Products",
       tip: "Products",
       link: "/dashboard/products",
+    },
+    {
+      icon: <IoMdAddCircle size={18} />,
+      label: "Add Product",
+      tip: "Add Product",
+      link: "/dashboard/add-product",
     },
     {
       icon: <MdAnalytics size={18} />,

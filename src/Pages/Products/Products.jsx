@@ -62,6 +62,7 @@ const Products = () => {
           </p>
         </div>
         <NormalBtn
+          to={"/dashboard/add-product"}
           icon={<IoMdAdd />}
           name="Add product"
           className="bg-primary"
@@ -179,7 +180,7 @@ const Products = () => {
           </div>
         </dialog>
       )}
-      {/* Edit Mondal */}
+      {/* Edit Product Mondal */}
       {showEditModal && (
         <dialog open className="modal">
           <div className="modal-box max-w-lg">

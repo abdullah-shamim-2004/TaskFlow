@@ -6,6 +6,7 @@ import DashBoardHome from "../../Pages/DashBoardHome/DashBoardHome";
 import Analytics from "../../Pages/Analytics/Analytics";
 import Users from "../../Pages/Users/Users";
 import Products from "../../Pages/Products/Products";
+import AddProducts from "../../Pages/AddProducts/AddProducts";
 
 const router = createBrowserRouter([
   {
@@ -33,6 +34,10 @@ const router = createBrowserRouter([
       {
         path: "/dashboard/products",
         element: <Products />,
+      },
+      {
+        path: "/dashboard/add-product",
+        element: <AddProducts />,
       },
       {
         path: "/dashboard/analytics",
