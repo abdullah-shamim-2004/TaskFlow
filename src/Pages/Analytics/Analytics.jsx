@@ -6,6 +6,18 @@ import { FaRegEye } from "react-icons/fa";
 import { LuMousePointerClick } from "react-icons/lu";
 import { GiTalk } from "react-icons/gi";
 import { IoAnalyticsSharp } from "react-icons/io5";
+import {
+  LineChart,
+  Line,
+  BarChart,
+  Bar,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  Legend,
+  ResponsiveContainer,
+} from "recharts";
 
 const Analytics = () => {
   const { analyticsData, isLoading } = UseAnalytics();
@@ -79,6 +91,89 @@ const Analytics = () => {
         {analyticsStats.map((data) => (
           <AnalyticsCard data={data} key={data.id} />
         ))}
+      </div>
+      
+      {/* Line chart */}
+      <div className="bg-white dark:bg-slate-800 rounded-2xl p-5 border border-slate-100 dark:border-slate-700/60 shadow-sm mb-4">
+        <div className="flex flex-wrap items-center justify-between gap-3 mb-5">
+          <div>
+            <h2 className="text-sm font-bold text-slate-700 dark:text-white">
+              📈 Views Over Time
+            </h2>
+            <p className="text-xs text-slate-400 mt-0.5">
+              Daily page views from Jan 1 – Jan 5
+            </p>
+          </div>
+          {/* Legend */}
+          <div className="flex items-center gap-4">
+            {[
+              { color: "#6366f1", label: "Views" },
+              { color: "#06b6d4", label: "Clicks" },
+              { color: "#10b981", label: "Conversions" },
+            ].map((l) => (
+              <div key={l.label} className="flex items-center gap-1.5">
+                <div
+                  className="w-3 h-0.5 rounded-full"
+                  style={{ background: l.color }}
+                />
+                <span className="text-[11px] text-slate-400 font-medium">
+                  {l.label}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <ResponsiveContainer className={"mt-5"} width="100%" height={260}>
+          <LineChart
+            data={analyticsData}
+            margin={{ top: 5, right: 10, left: 0, bottom: 0 }}
+          >
+            <CartesianGrid
+              strokeDasharray="3 3"
+              stroke="#f1f5f9"
+              vertical={false}
+            />
+            <XAxis
+              dataKey="date"
+              tick={{ fontSize: 12, fill: "#94a3b8" }}
+              axisLine={false}
+              tickLine={false}
+            />
+            <YAxis
+              tick={{ fontSize: 11, fill: "#94a3b8" }}
+              axisLine={false}
+              tickLine={false}
+              width={40}
+            />
+            {/* <Tooltip content={<CustomTooltip />} /> */}
+
+            <Line
+              type="monotone"
+              dataKey="views"
+              stroke="#6366f1"
+              strokeWidth={2.5}
+              dot={{ r: 4, fill: "#6366f1", strokeWidth: 0 }}
+              activeDot={{ r: 6, fill: "#6366f1" }}
+            />
+            <Line
+              type="monotone"
+              dataKey="clicks"
+              stroke="#06b6d4"
+              strokeWidth={2.5}
+              dot={{ r: 4, fill: "#06b6d4", strokeWidth: 0 }}
+              activeDot={{ r: 6, fill: "#06b6d4" }}
+            />
+            <Line
+              type="monotone"
+              dataKey="conversions"
+              stroke="#10b981"
+              strokeWidth={2.5}
+              dot={{ r: 4, fill: "#10b981", strokeWidth: 0 }}
+              activeDot={{ r: 6, fill: "#10b981" }}
+            />
+          </LineChart>
+        </ResponsiveContainer>
       </div>
     </div>
   );
