@@ -4,18 +4,20 @@ import ProductCard from "../../Components/Card/ProductCard/ProductCard";
 
 const AllProducts = () => {
   const [products, setProducts] = useState([]);
+
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const res = await axios.get("../../../public/allproducts.json");
+        const res = await axios.get("/allproducts.json");
         setProducts(res.data);
       } catch (error) {
         console.log(error);
       }
     };
+
     fetchProducts();
   }, []);
-  console.log(products);
+  //   console.log(products);
 
   return (
     <main className="bg-[#F8FAFC] min-h-screen pt-28 pb-20 px-4 md:px-12">
