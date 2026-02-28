@@ -2,9 +2,21 @@ import React, { useEffect, useState } from "react";
 import Logo from "../Logo/Logo";
 import LoginBtn from "../../Button/LoginBtn/LoginBtn";
 import { NavLink } from "react-router";
+import useAuth from "../../../Hooks/useAuth/useAuth";
+import { toast, ToastContainer } from "react-toastify";
 
 const Navbar = () => {
   const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
+  const { user, UserSignOut } = useAuth();
+  const handleSignOut = () => {
+    UserSignOut()
+      .then(() => {
+        toast.success("You signed out successfully!");
+      })
+      .catch((error) => {
+        toast.error(error.message);
+      });
+  };
   // Active Link class
   const linkClass = ({ isActive }) =>
     isActive
@@ -46,6 +58,7 @@ const Navbar = () => {
   }, [theme]);
   return (
     <div className="navbar bg-base-100 shadow-sm">
+      <ToastContainer />
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -103,7 +116,47 @@ const Navbar = () => {
           </label>
         </div>
         {/* Login Button */}
-        <LoginBtn />
+        {user ? (
+          <div className="dropdown dropdown-end">
+            <div tabIndex={0} role="button" className="m-1">
+              <div
+                className="tooltip tooltip-bottom"
+                data-tip={user.displayName || "No User"}
+              >
+                {user.photoURL ? (
+                  <img
+                    src={user.photoURL}
+                    alt={user.displayName || "User"}
+                    className="w-10 h-10 rounded-full border cursor-pointer"
+                  />
+                ) : (
+                  <FaUserCircle className="text-3xl text-base-content cursor-pointer" />
+                )}
+              </div>
+            </div>
+
+            <ul
+              tabIndex={0}
+              className="dropdown-content menu bg-base-100 rounded-box z-10 w-52 p-2 gap-2.5 shadow-sm"
+            >
+              <li>
+                <NavLink to={"/dashboard"}>DashBoard</NavLink>
+              </li>
+              <li>
+                <button
+                  onClick={handleSignOut}
+                  className="btn btn-outline btn-primary btn-sm"
+                >
+                  Logout
+                </button>
+              </li>
+            </ul>
+          </div>
+        ) : (
+          <div>
+            <LoginBtn />
+          </div>
+        )}
       </div>
     </div>
   );

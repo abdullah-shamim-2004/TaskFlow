@@ -69,7 +69,7 @@ const DashBoardLayout = () => {
               </div>
               <Logo />
             </div>
-            {/* Search Button + Mail + Notification + User info */}
+            {/*  Mail + Notification + User info */}
             <DashNav />
           </nav>
 
