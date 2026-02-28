@@ -24,7 +24,7 @@ const DashBoardHome = () => {
   const filterUsers = users?.slice(0, 4);
   // slice the products
   const filterProducts = products?.slice(0, 4);
-  console.log(filterProducts);
+  // console.log(filterProducts);
 
   const state = [
     {
