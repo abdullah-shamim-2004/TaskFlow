@@ -42,19 +42,19 @@
 
 ### Login Page
 
-![Login Page](https://placehold.co/800x450/0f172a/ffffff?text=Login+Page)
+![Login Page](/public/image.png)
 
 ### Dashboard Overview
 
-![Dashboard](https://placehold.co/800x450/6366f1/ffffff?text=Dashboard+Overview)
+![Dashboard](/public/overview.png)
 
 ### Analytics
 
-![Analytics](https://placehold.co/800x450/8b5cf6/ffffff?text=Analytics+Page)
+![Analytics](/public/analytics.png)
 
 ### Products Table
 
-![Products](https://placehold.co/800x450/06b6d4/ffffff?text=Products+Table)
+![Products](/public/products.png)
 
 > 📌 _Replace placeholder images with actual screenshots before submitting._
 
@@ -273,10 +273,9 @@ Authorization: Bearer <your_jwt_token>
 
 **Your Name**
 
-- 🌐 Portfolio: [your-portfolio.com](https://your-portfolio.com)
-- 💼 LinkedIn: [linkedin.com/in/your-profile](https://linkedin.com/in/your-profile)
-- 🐙 GitHub: [@your-username](https://github.com/your-username)
-- 📧 Email: your.email@example.com
+- 🌐 Portfolio: [your-portfolio.com](https://abdullah-shamim-portfolio.netlify.app/)
+- 💼 LinkedIn: [linkedin.com/in/your-profile](https://www.linkedin.com/in/abdullah-shamim-patwary/)
+- 📧 Email: your.abdullahshamim884@gmail.com
 
 ---
 
